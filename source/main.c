@@ -1,7 +1,7 @@
 /*
  *  Partner(s) Name: none
  *	Lab Section: 023
- *	Assignment:Lab #2  Exercise #1
+ *	Assignment:Lab #2  Exercise #2
  *	Exercise Description: [optional - include for your own benefit]
  *
  *	I acknowledge all content contained herein, excluding template or example
@@ -26,7 +26,7 @@ int main(void) {
 	cntavail = 0;
 	tempA = PINA & 0x01;
 	tempB = PINA & 0x02;
-	tempB = PINA & 0x04;
+	tempC = PINA & 0x04;
 	tempD = PINA & 0x08;
 	if(tempA == 0x01){
 		cntavail = cntavail + 1;
@@ -40,6 +40,7 @@ int main(void) {
 	if(tempD == 0x08){
                 cntavail = cntavail + 1;
 }
+	
 	PORTC = cntavail;
     }
     return 1;
