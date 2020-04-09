@@ -35,10 +35,15 @@ int main(void) {
 	//tempC = PINA & 0x04;
 	//tempD = PINA & 0x08;
 	int total;                                                                                                                                                                                                         total = PINA + PINB + PINC;
-        total = total / 3;                                                                                                                                                                                                 PORTD = total; 
+        difference = PINA - PINC;
+ 	PORTD = total; 
+	
+	if((PORTD < 64) && (PINA + PINB + PINC >= max) && (difference >= 80) ){
 	PORTD = PORTD <<2;
-
-	difference = PINA - PINC;
+}
+	else if((PORTD < 64) && ((PINA + PINB + PINC >= max) || (difference >= 80)) ){
+	PORTD = PORTD <<1;
+}
 	if(PINA + PINB + PINC >= max){
 		PORTD =PORTD |  0x01;
 		
@@ -47,6 +52,7 @@ int main(void) {
                 PORTD = PORTD | 0x02;
 }
 	total = 0;
+	difference = 0;
     }
 
     return 1;
