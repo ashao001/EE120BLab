@@ -44,27 +44,26 @@ int main(void) {
                 cntavail = cntavail + 1;
 
 }
-
 	
 	if (4 - cntavail == 0){
-		PINC = PINC | 0x80;
-		PINC = PINC & 0X80;
+		PORTC = PORTC | 0x80;
+		PORTC = PORTC & 0X80;
 } 
 	else if(4 - cntavail == 1){
-		PINC = PINC | 0x01;
-		PINC = PINC & 0X01;
+		PORTC = PORTC | 0x01;
+		PORTC = PORTC & 0X01;
 }
 	else if(4 - cntavail == 2){
-                PINC = PINC | 0x02;
-                PINC = PINC & 0X02;
+                PORTC = PORTC | 0x02;
+                PORTC = PORTC & 0X02;
 }
 	else if(4 - cntavail == 3){
-                PINC = PINC | 0x03;
-                PINC = PINC & 0X03;
+                PORTC = PORTC | 0x03;
+                PORTC = PORTC & 0X03;
 }
 	else if(4 - cntavail == 4){
-                PINC = PINC | 0x04;
-                PINC = PINC & 0X04;
+                PORTC = PORTC | 0x04;
+                PORTC = PORTC & 0X04;
 }
 	cntavail = 0;
     }

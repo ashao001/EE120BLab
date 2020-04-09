@@ -43,7 +43,7 @@ setPINA 0x00
 # Continue for several ticks
 continue 2
 # Set expect values
-expectPINC 0x80
+expectPORTC 0x80
 # Check pass/fail
 checkResult
 
@@ -51,31 +51,31 @@ checkResult
 test "PINA: 0x01 => PORTC: 3"
 setPINA 0x01
 continue 2
-expectPINC 0x03
+expectPORTC 0x03
 checkResult
 
 test "PINA: 0x02 => PINC: 3"
 setPINA 0x02
 continue 2
-expectPINC 0x03
+expectPORTC 0x03
 checkResult
 
 test "PINA: 0x03 => PINC: 2"
 setPINA 0x03
 continue 2
-expectPINC 0x02
+expectPORTC 0x02
 checkResult
 
 test"PINA: 0x07 => PINC: 1"
 setPINA 0x07
 continue 2
-expectPINC 0x01
+expectPORTC 0x01
 checkResult
 
 test"PINA: 0x08 => PINC: 3"
 setPINA 0x08
 continue 2
-expectPINC 0x03
+expectPORTC 0x03
 checkResult
 
 # Report on how many tests passed/tests ran
