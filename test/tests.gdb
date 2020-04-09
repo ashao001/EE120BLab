@@ -25,7 +25,7 @@
 
 # Partner(s) Name & E-mail:none
 # Lab Section: 023
- # Assignment: Lab #2  Exercise #1 test
+ # Assignment: Lab #2  Exercise #2 test
  # Exercise Description: [optional - include for your own benefit]
  #   
  # I acknowledge all content contained herein, excluding template 
@@ -43,27 +43,39 @@ setPINA 0x00
 # Continue for several ticks
 continue 2
 # Set expect values
-expectPORTB 0x00
+expectPORTC 0
 # Check pass/fail
 checkResult
 
 # Add tests below
-test "PINA: 0x01 => PORTB: 0x01"
+test "PINA: 0x01 => PORTC: 0x01"
 setPINA 0x01
 continue 2
-expectPORTB 0x01
+expectPORTC 0x01
 checkResult
 
-test "PINA: 0x02 => PORTB: 0x02"
+test "PINA: 0x02 => PORTC: 1"
 setPINA 0x02
 continue 2
-expectPORTB 0x00
+expectPORTC 0x01
 checkResult
 
-test "PINA: 0x03 => PORTB: 0x00"
+test "PINA: 0x03 => PORTC: 2"
 setPINA 0x03
 continue 2
-expectPORTB 0
+expectPORTC 0x02
+checkResult
+
+test"PINA: 0x07 => PORTC: 3"
+setPINA 0x07
+continue 2
+expectPORTC 0x03
+checkResult
+
+test"PINA: 0x08 => PORTC: 1"
+setPINA 0x08
+continue 2
+expectPORTC 0x01
 checkResult
 
 # Report on how many tests passed/tests ran
