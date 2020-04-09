@@ -15,19 +15,32 @@
 int main(void) {
     /* Insert DDR and PORT initializations */
      
-     DDRB = 0xFF; //CONFIGURE 8 PINS AS OUPUT
-     PORTB = 0X00;  //INITIALIZE
+     DDRC = 0xFF; //CONFIGURE 8 PINS AS OUPUT
+     PORTC = 0X00;  //INITIALIZE
      DDRA = 0x00; //input
      PORTA = 0xFF;
     /* Insert your solution below */
-     unsigned char tempA, tempB;
+     unsigned char tempA, tempB, tempC, tempD, cntavail;
+	
     while (1) {
-	tempA = PINA & 0x03;
-	tempB = 0x00;
+	cntavail = 0;
+	tempA = PINA & 0x01;
+	tempB = PINA & 0x02;
+	tempB = PINA & 0x04;
+	tempD = PINA & 0x08;
 	if(tempA == 0x01){
-		tempB = tempB | 0x01;
+		cntavail = cntavail + 1;
 }
-	PORTB = tempB;
+	if(tempB == 0x02){
+                cntavail = cntavail + 1;
+}
+	if(tempC == 0x04){
+                cntavail = cntavail + 1;
+}
+	if(tempD == 0x08){
+                cntavail = cntavail + 1;
+}
+	PORTC = cntavail;
     }
     return 1;
 }
